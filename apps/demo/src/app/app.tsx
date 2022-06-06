@@ -1,26 +1,26 @@
 import { ThemeProvider } from '@mui/material/styles';
 import { RichTextEditor } from '@stackbit/rich-text-editor';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, Link, Typography } from '@mui/material';
 
 import { theme } from './theme';
 
-// function Copyright() {
-//   return (
-//     <Typography
-//       variant="body2"
-//       color="text.secondary"
-//       align="center"
-//       sx={{ padding: 1 }}
-//     >
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://stackbit.com/">
-//         Stackbit, Inc.
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
+function Copyright() {
+  return (
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      sx={{ padding: 1 }}
+    >
+      {'Copyright © '}
+      <Link color="inherit" href="https://stackbit.com/">
+        Stackbit, Inc.
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
 // export type SbEditorState = PlatesStoreState<Value>;
 
@@ -68,6 +68,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <RichTextEditor />
+      <Copyright />
     </ThemeProvider>
   );
 }
