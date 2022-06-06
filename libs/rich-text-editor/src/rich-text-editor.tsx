@@ -47,7 +47,6 @@ import {
   createTodoListPlugin,
   createTrailingBlockPlugin,
   createUnderlinePlugin,
-  HeadingToolbar,
   ImageToolbarButton,
   LineHeightToolbarDropdown,
   LinkToolbarButton,
@@ -58,9 +57,9 @@ import {
   Plate,
   PlateProps,
 } from '@udecode/plate';
-import { withStyledPlaceHolders } from './config/components/withStyledPlaceHolders';
-import { CONFIG } from './config/config';
-import { VALUES } from './config/values/values';
+import { withStyledPlaceHolders } from './lib/components/withStyledPlaceHolders';
+import { CONFIG } from './lib/config';
+import { VALUES } from './lib/values';
 import {
   AlignToolbarButtons,
   BasicElementToolbarButtons,
@@ -69,7 +68,8 @@ import {
   ListToolbarButtons,
   MarkBallonToolbar,
   TableToolbarButtons,
-} from './config/components/Toolbars';
+  UnstyledHeadToolbar,
+} from './lib/components/Toolbars';
 import { FormatColorText } from '@styled-icons/material/FormatColorText';
 import { Check } from '@styled-icons/material/Check';
 import { FontDownload } from '@styled-icons/material/FontDownload';
@@ -193,14 +193,14 @@ export default function RichTextEditor(
   return (
     <div {...props}>
       <Plate
-        id="playground"
+        id="main"
         editableProps={CONFIG.editableProps}
-        initialValue={VALUES['playground']}
+        initialValue={VALUES['main']}
         plugins={plugins}
       >
         <AppBar color="inherit">
           <Toolbar>
-            <HeadingToolbar>
+            <UnstyledHeadToolbar>
               <BasicElementToolbarButtons />
               <ListToolbarButtons />
               <IndentToolbarButtons />
@@ -223,7 +223,7 @@ export default function RichTextEditor(
               <ImageToolbarButton icon={<Image />} />
               <MediaEmbedToolbarButton icon={<OndemandVideo />} />
               <TableToolbarButtons />
-            </HeadingToolbar>
+            </UnstyledHeadToolbar>
           </Toolbar>
         </AppBar>
         <Toolbar id="back-to-top-anchor" />

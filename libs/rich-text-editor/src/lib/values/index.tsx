@@ -1,16 +1,14 @@
 /** @jsxRuntime classic */
 /** @jsx hjsx */
-import { ELEMENT_HR } from '@udecode/plate';
+import { ELEMENT_HR, TDescendant } from '@udecode/plate';
 import { hjsx } from '@udecode/plate-test-utils';
 import { faker } from '@faker-js/faker';
-import { initialDataExcalidraw } from './initialDataExcalidraw';
 import { createList, getNodesWithRandomId } from './utils';
-import { IRichTextValue } from '../ast';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 hjsx;
 
-const align = (
+const align: any = (
   <fragment>
     <hh1 align="right">Alignment</hh1>
     <hp align="right">
@@ -23,7 +21,7 @@ const align = (
   </fragment>
 );
 
-const lineHeight = (
+const lineHeight: any = (
   <fragment>
     <hh1>Line Height</hh1>
     <hp>This block text has default line height. {faker.lorem.paragraph()}</hp>
@@ -38,7 +36,7 @@ const lineHeight = (
   </fragment>
 );
 
-const indent = (
+const indent: any = (
   <fragment>
     <hh1>Changing block indentation</hh1>
     <hp indent={1}>
@@ -52,90 +50,90 @@ const indent = (
   </fragment>
 );
 
-// const indentList: any = (
-//   <fragment>
-//     <hh1>Modern manned spacecraft</hh1>
-//     <hp>List:</hp>
-//     <hp indent={1} listStyleType="upper-roman">
-//       Soyuz (Soviet/Russian)
-//     </hp>
-//     <hp indent={2} listStyleType="decimal">
-//       Early stage (all retired)
-//     </hp>
-//     <hp indent={3} listStyleType="decimal">
-//       7K-OK
-//     </hp>
-//     <hp indent={3} listStyleType="decimal">
-//       7KT-OK
-//     </hp>
-//     {/* <hp indent={3} listStyleType="lower-latin"> */}
-//     {/*  7K-T */}
-//     {/* </hp> */}
-//     {/* <hp indent={3} listStyleType="lower-latin"> */}
-//     {/*  7K-TM */}
-//     {/* </hp> */}
-//     <hp indent={2} listStyleType="decimal">
-//       Soyuz T (retired)
-//     </hp>
-//     <hp indent={2} listStyleType="decimal">
-//       Soyuz TM (retired)
-//     </hp>
-//     {/* <hp indent={2} listStyleType="decimal"> */}
-//     {/*  Soyuz TMA (retired) */}
-//     {/* </hp> */}
-//     {/* <hp indent={2} listStyleType="decimal"> */}
-//     {/*  Soyuz TMA-M (retired) */}
-//     {/* </hp> */}
-//     {/* <hp indent={2} listStyleType="decimal"> */}
-//     {/*  Soyuz MS */}
-//     {/* </hp> */}
-//     <hp indent={1} listStyleType="upper-roman">
-//       STS orbiter (American; all retired)
-//     </hp>
-//     <hp indent={2} listStyleType="decimal">
-//       Columbia
-//     </hp>
-//     <hp indent={2} listStyleType="decimal">
-//       Challenger
-//     </hp>
-//     {/* <hp indent={2} listStyleType="decimal"> */}
-//     {/*  Discovery */}
-//     {/* </hp> */}
-//     {/* <hp indent={2} listStyleType="decimal"> */}
-//     {/*  Atlantis */}
-//     {/* </hp> */}
-//     {/* <hp indent={2} listStyleType="decimal"> */}
-//     {/*  Endeavour */}
-//     {/* </hp> */}
-//     <hp indent={1} listStyleType="upper-roman">
-//       SpaceX Crew Dragon (American)
-//     </hp>
-//     <hp indent={1} listStyleType="upper-roman">
-//       Shenzhou (Chinese)
-//     </hp>
-//   </fragment>
-// );
+const indentList: any = (
+  <fragment>
+    <hh1>Modern manned spacecraft</hh1>
+    <hp>List:</hp>
+    <hp indent={1} listStyleType="upper-roman">
+      Soyuz (Soviet/Russian)
+    </hp>
+    <hp indent={2} listStyleType="decimal">
+      Early stage (all retired)
+    </hp>
+    <hp indent={3} listStyleType="decimal">
+      7K-OK
+    </hp>
+    <hp indent={3} listStyleType="decimal">
+      7KT-OK
+    </hp>
+    {/* <hp indent={3} listStyleType="lower-latin"> */}
+    {/*  7K-T */}
+    {/* </hp> */}
+    {/* <hp indent={3} listStyleType="lower-latin"> */}
+    {/*  7K-TM */}
+    {/* </hp> */}
+    <hp indent={2} listStyleType="decimal">
+      Soyuz T (retired)
+    </hp>
+    <hp indent={2} listStyleType="decimal">
+      Soyuz TM (retired)
+    </hp>
+    {/* <hp indent={2} listStyleType="decimal"> */}
+    {/*  Soyuz TMA (retired) */}
+    {/* </hp> */}
+    {/* <hp indent={2} listStyleType="decimal"> */}
+    {/*  Soyuz TMA-M (retired) */}
+    {/* </hp> */}
+    {/* <hp indent={2} listStyleType="decimal"> */}
+    {/*  Soyuz MS */}
+    {/* </hp> */}
+    <hp indent={1} listStyleType="upper-roman">
+      STS orbiter (American; all retired)
+    </hp>
+    <hp indent={2} listStyleType="decimal">
+      Columbia
+    </hp>
+    <hp indent={2} listStyleType="decimal">
+      Challenger
+    </hp>
+    {/* <hp indent={2} listStyleType="decimal"> */}
+    {/*  Discovery */}
+    {/* </hp> */}
+    {/* <hp indent={2} listStyleType="decimal"> */}
+    {/*  Atlantis */}
+    {/* </hp> */}
+    {/* <hp indent={2} listStyleType="decimal"> */}
+    {/*  Endeavour */}
+    {/* </hp> */}
+    <hp indent={1} listStyleType="upper-roman">
+      SpaceX Crew Dragon (American)
+    </hp>
+    <hp indent={1} listStyleType="upper-roman">
+      Shenzhou (Chinese)
+    </hp>
+  </fragment>
+);
 
-// const empty: any = (
-//   <fragment>
-//     <hp>
-//       <htext />
-//     </hp>
-//   </fragment>
-// );
+const empty: any = (
+  <fragment>
+    <hp>
+      <htext />
+    </hp>
+  </fragment>
+);
 
-// const placeholder: any = (
-//   <fragment>
-//     <hh1>
-//       <htext />
-//     </hh1>
-//     <hp>
-//       <htext />
-//     </hp>
-//   </fragment>
-// );
+const placeholder: any = (
+  <fragment>
+    <hh1>
+      <htext />
+    </hh1>
+    <hp>
+      <htext />
+    </hp>
+  </fragment>
+);
 
-const horizontalRule = (
+const horizontalRule: any = (
   <fragment>
     <hp>This is a paragraph.</hp>
     <element type={ELEMENT_HR}>
@@ -149,7 +147,7 @@ const horizontalRule = (
   </fragment>
 );
 
-const mediaEmbed = (
+const mediaEmbed: any = (
   <fragment>
     <hh2>🎥 Media Embed</hh2>
     <hp>
@@ -167,18 +165,7 @@ const mediaEmbed = (
   </fragment>
 );
 
-const excalidraw = (
-  <fragment>
-    <hh2>🎨 Excalidraw</hh2>
-    <hp>Embed Excalidraw within your Slate document!</hp>
-    <hexcalidraw {...initialDataExcalidraw}>
-      <htext />
-    </hexcalidraw>
-    <hp>Try it out!</hp>
-  </fragment>
-);
-
-const forcedLayout = (
+const forcedLayout: any = (
   <fragment>
     <hh1>
       <htext />
@@ -203,25 +190,25 @@ const forcedLayout = (
   </fragment>
 );
 
-// const balloonToolbar = (
-//   <fragment>
-//     <hp>
-//       This example shows how you can make a hovering menu appear above your
-//       content, which you can use to make text <htext bold>bold</htext>,{' '}
-//       <htext italic>italic</htext>, or anything else you might want to do!
-//     </hp>
-//     <hp>
-//       Try it out yourself! Just{' '}
-//       <htext bold>select any piece of text and the menu will appear</htext>.
-//     </hp>
-//     <hp>
-//       You can enable and customize the tooltip on each toolbar button. Check
-//       Tippy.js documentation for more info!
-//     </hp>
-//   </fragment>
-// );
+const balloonToolbar: any = (
+  <fragment>
+    <hp>
+      This example shows how you can make a hovering menu appear above your
+      content, which you can use to make text <htext bold>bold</htext>,{' '}
+      <htext italic>italic</htext>, or anything else you might want to do!
+    </hp>
+    <hp>
+      Try it out yourself! Just{' '}
+      <htext bold>select any piece of text and the menu will appear</htext>.
+    </hp>
+    <hp>
+      You can enable and customize the tooltip on each toolbar button. Check
+      Tippy.js documentation for more info!
+    </hp>
+  </fragment>
+);
 
-const image = (
+const image: any = (
   <fragment>
     <hh2>📷 Image</hh2>
     <hp>
@@ -243,7 +230,7 @@ const image = (
   </fragment>
 );
 
-const link = (
+const link: any = (
   <fragment>
     <hh2>🔗 Link</hh2>
     <hp>
@@ -259,24 +246,24 @@ const link = (
   </fragment>
 );
 
-// const previewMd = (
-//   <fragment>
-//     <hh1>👀 Preview Markdown</hh1>
-//     <hp>
-//       Slate is flexible enough to add **decorations** that can format text based
-//       on its content. For example, this editor has **Markdown** preview
-//       decorations on it, to make it _dead_ simple to make an editor with
-//       built-in `Markdown` previewing.
-//     </hp>
-//     <hp>- List.</hp>
-//     <hp> Blockquote.</hp>
-//     <hp>---</hp>
-//     <hp>## Try it out!</hp>
-//     <hp>Try it out for yourself!</hp>
-//   </fragment>
-// );
+const previewMd: any = (
+  <fragment>
+    <hh1>👀 Preview Markdown</hh1>
+    <hp>
+      Slate is flexible enough to add **decorations** that can format text based
+      on its content. For example, this editor has **Markdown** preview
+      decorations on it, to make it _dead_ simple to make an editor with
+      built-in `Markdown` previewing.
+    </hp>
+    <hp>- List.</hp>
+    <hp> Blockquote.</hp>
+    <hp>---</hp>
+    <hp>## Try it out!</hp>
+    <hp>Try it out for yourself!</hp>
+  </fragment>
+);
 
-const autoformat = (
+const autoformat: any = (
   <fragment>
     <hh1>🏃‍♀️ Autoformat</hh1>
     <hp>
@@ -330,14 +317,15 @@ const autoformat = (
       <hli>
         <hlic>
           Type <htext code>*</htext>, <htext code>-</htext> or{' '}
-          <htext code>+</htext> followed by <htext code>space</htext> to create
-          a bulleted list.
+          <htext code>+</htext>
+          followed by <htext code>space</htext> to create a bulleted list.
         </hlic>
       </hli>
       <hli>
         <hlic>
           Type <htext code>1.</htext> or <htext code>1)</htext> followed by{' '}
-          <htext code>space</htext> to create a numbered list.
+          <htext code>space</htext>
+          to create a numbered list.
         </hlic>
       </hli>
       <hli>
@@ -396,7 +384,7 @@ const autoformat = (
   </fragment>
 );
 
-const mentions = (
+const mentions: any = (
   <fragment>
     <hh2>💬 Mention</hh2>
     <hp>
@@ -419,15 +407,16 @@ const mentions = (
   </fragment>
 );
 
-const pasteHtml = (
+const pasteHtml: any = (
   <fragment>
     <hh1>Deserialize HTML</hh1>
     <hp>
       By default, pasting content into a Slate editor will use the clipboard's{' '}
-      <htext code>'text/plain'</htext> data. That's okay for some use cases, but
-      sometimes you want users to be able to paste in content and have it
-      maintain its formatting. To do this, your editor needs to handle{' '}
-      <htext code>'text/html'</htext> data.
+      <htext code>'text/plain'</htext>
+      data. That's okay for some use cases, but sometimes you want users to be
+      able to paste in content and have it maintain its formatting. To do this,
+      your editor needs to handle <htext code>'text/html'</htext>
+      data.
     </hp>
     <hp>This is an example of doing exactly that!</hp>
     <hp>
@@ -441,7 +430,7 @@ const pasteHtml = (
   </fragment>
 );
 
-const pasteDocx = (
+const pasteDocx: any = (
   <fragment>
     <hh1>Deserialize Docx</hh1>
     <hp>Copy and paste Docx content from Microsoft Word.</hp>
@@ -451,7 +440,7 @@ const pasteDocx = (
   </fragment>
 );
 
-const pasteMd = (
+const pasteMd: any = (
   <fragment>
     <hh1>Deserialize Markdown</hh1>
     <hp>
@@ -466,7 +455,7 @@ const pasteMd = (
   </fragment>
 );
 
-const pasteAst = (
+const pasteAst: any = (
   <fragment>
     <hh2>Slate AST</hh2>
     <hul>
@@ -502,16 +491,16 @@ const pasteAst = (
   </fragment>
 );
 
-// const plainText = (
-//   <fragment>
-//     <hp>
-//       This is editable plain text with react and history plugins, just like a
-//       textarea!
-//     </hp>
-//   </fragment>
-// );
+const plainText: any = (
+  <fragment>
+    <hp>
+      This is editable plain text with react and history plugins, just like a
+      textarea!
+    </hp>
+  </fragment>
+);
 
-const pasteCsv = (
+const pasteCsv: any = (
   <fragment>
     <hh1>Deserialize CSV</hh1>
     <hp>Copy and paste CSV content into a table.</hp>
@@ -521,7 +510,7 @@ const pasteCsv = (
   </fragment>
 );
 
-const basicMarks = (
+const basicMarks: any = (
   <fragment>
     <hh1>💅 Marks</hh1>
     <hh2>💧 Basic Marks</hh2>
@@ -556,7 +545,7 @@ const basicMarks = (
   </fragment>
 );
 
-const font = (
+const font: any = (
   <fragment>
     <hp>
       <htext color="white" backgroundColor="black" fontSize="30px">
@@ -569,7 +558,7 @@ const font = (
       </htext>
     </hp>
     <hp>
-      This text has <htext backgroundColor="#dc3735"> </htext>
+      This text has <htext backgroundColor="#dc3735"></htext>
       <htext color="white" backgroundColor="#df4538">
         m
       </htext>
@@ -594,12 +583,12 @@ const font = (
       <htext color="white" backgroundColor="#f5a74b">
         e
       </htext>
-      <htext backgroundColor="#f9b44e"> </htext>
+      <htext backgroundColor="#f9b44e"></htext>
       <htext color="#ff0000">f</htext>
       <htext color="#ff3333">o</htext>
       <htext color="#ff6666">n</htext>
       <htext color="#ff9999">t</htext>
-      <htext> </htext>
+      <htext></htext>
       <htext color="#ffcccc">c</htext>
       <htext color="#ffcccc">o</htext>
       <htext color="#ccffcc">l</htext>
@@ -618,29 +607,30 @@ const font = (
   </fragment>
 );
 
-// const kbd = (
-//   <fragment>
-//     <hp>
-//       Press <htext kbd>⌘+B</htext> to mark selected text bold or{' '}
-//       <htext kbd>⌘+I</htext> to mark it italic.
-//     </hp>
-//   </fragment>
-// );
+const kbd: any = (
+  <fragment>
+    <hp>
+      Press <htext kbd>⌘+B</htext> to mark selected text bold or{' '}
+      <htext kbd>⌘+I</htext>
+      to mark it italic.
+    </hp>
+  </fragment>
+);
 
-// const marks = [...basicMarks, ...kbd];
+const marks = [...basicMarks, ...kbd];
 
-const highlight = (
+const highlight: any = (
   <fragment>
     <hh2>🌈 Highlight</hh2>
     <hp>
       The Highlight plugin enables support for{' '}
-      <htext highlight>highlights</htext> , useful when reviewing content or
+      <htext highlight>highlights</htext>, useful when reviewing content or
       highlighting it for future reference.
     </hp>
   </fragment>
 );
 
-const basicElements = (
+const basicElements: any = (
   <fragment>
     <hh1>🧱 Elements</hh1>
     <hh2>🔥 Basic Elements</hh2>
@@ -659,7 +649,7 @@ const basicElements = (
   </fragment>
 );
 
-const list = (
+const list: any = (
   <fragment>
     <hh2>✍️ List</hh2>
     <hp>
@@ -710,18 +700,18 @@ const list = (
   </fragment>
 );
 
-// const findReplace = (
-//   <fragment>
-//     <hp>
-//       This is editable text that you can search. As you search, it looks for
-//       matching strings of text, and adds <htext bold>decorations</htext> to them
-//       in realtime.
-//     </hp>
-//     <hp>Try it out for yourself by typing in the search box above!</hp>
-//   </fragment>
-// );
+const findReplace: any = (
+  <fragment>
+    <hp>
+      This is editable text that you can search. As you search, it looks for
+      matching strings of text, and adds <htext bold>decorations</htext> to them
+      in realtime.
+    </hp>
+    <hp>Try it out for yourself by typing in the search box above!</hp>
+  </fragment>
+);
 
-const createTable = () => (
+const createTable = (): any => (
   <fragment>
     <htable>
       <htr>
@@ -782,7 +772,7 @@ const createTable = () => (
   </fragment>
 );
 
-const createSpanningTable = () => (
+const createSpanningTable = (): any => (
   <fragment>
     <htable>
       <htr>
@@ -806,7 +796,7 @@ const createSpanningTable = () => (
   </fragment>
 );
 
-const table = (
+const table: any = (
   <fragment>
     <hh2>🏓 Table</hh2>
     <hp>
@@ -821,7 +811,7 @@ const table = (
   </fragment>
 );
 
-const softBreak = (
+const softBreak: any = (
   <fragment>
     <hh1>🍦 Soft Break ⇧⏎</hh1>
     <hp>You can define a set of rules with:</hp>
@@ -836,13 +826,13 @@ const softBreak = (
   </fragment>
 );
 
-// const singleLine: any = (
-//   <fragment>
-//     <hp>You cannot type or paste text with multiple lines.</hp>
-//   </fragment>
-// );
+const singleLine: any = (
+  <fragment>
+    <hp>You cannot type or paste text with multiple lines.</hp>
+  </fragment>
+);
 
-const exitBreak = (
+const exitBreak: any = (
   <fragment>
     <hh1>⏎ Exit Break ⏎</hh1>
     <hp>You can define a set of rules with:</hp>
@@ -861,103 +851,139 @@ const exitBreak = (
   </fragment>
 );
 
-// const editableVoids: any = (
-//   <fragment>
-//     <hp>
-//       In addition to nodes that contain editable text, you can insert void
-//       nodes, which can also contain editable elements, inputs, or an entire
-//       other Slate editor.
-//     </hp>
-//     <element type="editable-void">
-//       <htext />
-//     </element>
-//     <hp>
-//       <htext />
-//     </hp>
-//   </fragment>
-// );
+const editableVoids: any = (
+  <fragment>
+    <hp>
+      In addition to nodes that contain editable text, you can insert void
+      nodes, which can also contain editable elements, inputs, or an entire
+      other Slate editor.
+    </hp>
+    <element type="editable-void">
+      <htext />
+    </element>
+    <hp>
+      <htext />
+    </hp>
+  </fragment>
+);
 
-// const iframe: any = (
-//   <fragment>
-//     <hp>
-//       In this example, the document gets rendered into a controlled{' '}
-//       <htext code>iframe</htext>. This is <htext italic>particularly</htext>{' '}
-//       useful, when you need to separate the styles for your editor contents from
-//       the ones addressing your UI.
-//     </hp>
-//     <hp>
-//       This also the only reliable method to preview any{' '}
-//       <htext bold>media queries</htext> in your CSS.
-//     </hp>
-//   </fragment>
-// );
+const iframe: any = (
+  <fragment>
+    <hp>
+      In this example, the document gets rendered into a controlled{' '}
+      <htext code>iframe</htext>. This is <htext italic>particularly</htext>{' '}
+      useful, when you need to separate the styles for your editor contents from
+      the ones addressing your UI.
+    </hp>
+    <hp>
+      This also the only reliable method to preview any{' '}
+      <htext bold>media queries</htext>
+      in your CSS.
+    </hp>
+  </fragment>
+);
 
-// const HEADINGS = 100;
-// const PARAGRAPHS = 7;
+const HEADINGS = 100;
+const PARAGRAPHS = 7;
 
-// const createHugeDocument = () => {
-//   const hugeDocument: TDescendant[] = [];
+const createHugeDocument = () => {
+  const hugeDocument: TDescendant[] = [];
 
-//   for (let h = 0; h < HEADINGS; h++) {
-//     hugeDocument.push((<hh1>{faker.lorem.sentence()}</hh1>) as any);
+  for (let h = 0; h < HEADINGS; h++) {
+    hugeDocument.push((<hh1>{faker.lorem.sentence()}</hh1>) as any);
 
-//     for (let p = 0; p < PARAGRAPHS; p++) {
-//       hugeDocument.push((<hp>{faker.lorem.paragraph()}</hp>) as any);
-//     }
-//   }
+    for (let p = 0; p < PARAGRAPHS; p++) {
+      hugeDocument.push((<hp>{faker.lorem.paragraph()}</hp>) as any);
+    }
+  }
 
-//   return hugeDocument;
-// };
+  return hugeDocument;
+};
 
-// const createMultiEditors = () => {
-//   const multiEditors: TDescendant[][] = [];
+const createMultiEditors = () => {
+  const multiEditors: TDescendant[][] = [];
 
-//   for (let h = 0; h < 400; h++) {
-//     const multiEditor: TDescendant[] = [];
-//     multiEditor.push((<hh1>{faker.lorem.sentence()}</hh1>) as any);
+  for (let h = 0; h < 400; h++) {
+    const multiEditor: TDescendant[] = [];
+    multiEditor.push((<hh1>{faker.lorem.sentence()}</hh1>) as any);
 
-//     for (let p = 0; p < 2; p++) {
-//       multiEditor.push((<hp>{faker.lorem.paragraph()}</hp>) as any);
-//     }
-//     multiEditors.push(multiEditor);
-//   }
+    for (let p = 0; p < 2; p++) {
+      multiEditor.push((<hp>{faker.lorem.paragraph()}</hp>) as any);
+    }
+    multiEditors.push(multiEditor);
+  }
 
-//   return multiEditors;
-// };
+  return multiEditors;
+};
 
-// const basicNodes = [...basicElements, ...basicMarks];
+const basicNodes = [...basicElements, ...basicMarks];
 
-const initialValue = getNodesWithRandomId([
-  forcedLayout,
-  basicMarks,
-  font,
-  highlight,
-  basicElements,
-  horizontalRule,
+const main: any = getNodesWithRandomId([
+  ...forcedLayout,
+  ...basicMarks,
+  ...font,
+  ...highlight,
+  ...basicElements,
+  ...horizontalRule,
+  ...align,
+  ...lineHeight,
+  ...indent,
+  ...list,
+  ...table,
+  ...link,
+  ...mentions,
+  ...image,
+  ...mediaEmbed,
+  ...autoformat,
+  ...softBreak,
+  ...exitBreak,
+  ...pasteHtml,
+  ...pasteDocx,
+  ...pasteMd,
+  ...pasteCsv,
+  ...pasteAst,
+]);
+
+export const VALUES: Record<string, any> = {
   align,
-  lineHeight,
-  indent,
-  list,
-  table,
-  link,
-  mentions,
-  image,
-  mediaEmbed,
-  excalidraw,
   autoformat,
-  softBreak,
+  balloonToolbar,
+  basicElements,
+  basicMarks,
+  basicNodes,
+  createMultiEditors,
+  createHugeDocument,
+  createSpanningTable,
+  createTable,
+  editableVoids,
+  empty,
   exitBreak,
+  findReplace,
+  font,
+  forcedLayout,
+  highlight,
+  horizontalRule,
+  iframe,
+  image,
+  indent,
+  indentList,
+  kbd,
+  lineHeight,
+  link,
+  list,
+  marks,
+  mediaEmbed,
+  mentions,
+  pasteAst,
+  pasteCsv,
   pasteHtml,
   pasteDocx,
   pasteMd,
-  pasteCsv,
-  pasteAst,
-]);
-
-type Values = {
-  initialValue: IRichTextValue;
-};
-
-export const VALUES: Values = {
-  initialValue,
+  placeholder,
+  plainText,
+  main,
+  previewMd,
+  singleLine,
+  softBreak,
+  table,
 };

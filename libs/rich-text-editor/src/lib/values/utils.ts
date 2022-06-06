@@ -7,6 +7,13 @@ import {
   TText,
 } from '@udecode/plate';
 
+export interface IMarkedText extends TText {
+  bold?: boolean;
+  italic?: boolean;
+  code?: boolean;
+  underline?: boolean;
+}
+
 export const createElement = (
   text = '',
   {
@@ -14,10 +21,10 @@ export const createElement = (
     mark,
   }: {
     type?: string;
-    mark?: string;
+    mark?: keyof IMarkedText;
   } = {}
 ) => {
-  const leaf: Record<string, any> = { text };
+  const leaf: IMarkedText = { text };
   if (mark) {
     leaf[mark] = true;
   }

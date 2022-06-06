@@ -29,15 +29,10 @@ import {
   TrailingBlockPlugin,
   withProps,
 } from '@udecode/plate';
-import {
-  ELEMENT_EXCALIDRAW,
-  ExcalidrawElement,
-} from '@udecode/plate-ui-excalidraw';
 import { Partial } from 'rollup-plugin-typescript2/dist/partial';
 import { EditableProps } from 'slate-react/dist/components/editable';
 import { css } from 'styled-components';
-import { IRichTextPlatePlugin } from '../rich-text-editor.types';
-import { autoformatRules } from './autoformat';
+import { autoformatRules } from './autoformat/autoformatRules';
 import { MENTIONABLES } from './mentionables';
 
 const resetBlockTypesCommonRule = {
@@ -49,17 +44,17 @@ interface Config {
   components: Record<string, any>;
   editableProps: EditableProps;
 
-  align: Partial<IRichTextPlatePlugin>;
-  autoformat: Partial<IRichTextPlatePlugin<AutoformatPlugin>>;
-  exitBreak: Partial<IRichTextPlatePlugin<ExitBreakPlugin>>;
-  forceLayout: Partial<IRichTextPlatePlugin<NormalizeTypesPlugin>>;
-  indent: Partial<IRichTextPlatePlugin<IndentPlugin>>;
-  lineHeight: Partial<IRichTextPlatePlugin>;
+  align: Partial<PlatePlugin>;
+  autoformat: Partial<PlatePlugin<AutoformatPlugin>>;
+  exitBreak: Partial<PlatePlugin<ExitBreakPlugin>>;
+  forceLayout: Partial<PlatePlugin<NormalizeTypesPlugin>>;
+  indent: Partial<PlatePlugin<IndentPlugin>>;
+  lineHeight: Partial<PlatePlugin>;
   mentionItems: any;
-  resetBlockType: Partial<IRichTextPlatePlugin<ResetNodePlugin>>;
-  selectOnBackspace: Partial<IRichTextPlatePlugin<SelectOnBackspacePlugin>>;
-  softBreak: Partial<IRichTextPlatePlugin<SoftBreakPlugin>>;
-  trailingBlock: Partial<IRichTextPlatePlugin<TrailingBlockPlugin>>;
+  resetBlockType: Partial<PlatePlugin<ResetNodePlugin>>;
+  selectOnBackspace: Partial<PlatePlugin<SelectOnBackspacePlugin>>;
+  softBreak: Partial<PlatePlugin<SoftBreakPlugin>>;
+  trailingBlock: Partial<PlatePlugin<TrailingBlockPlugin>>;
 }
 
 export const CONFIG: Config = {
@@ -85,7 +80,6 @@ export const CONFIG: Config = {
         ],
       },
     }),
-    [ELEMENT_EXCALIDRAW]: ExcalidrawElement,
   }),
 
   align: {

@@ -54,6 +54,7 @@ import {
   ELEMENT_UL,
   getPluginType,
   getPreventDefaultHandler,
+  HeadingToolbar,
   indent,
   insertTable,
   ListToolbarButton,
@@ -72,12 +73,13 @@ import {
   ToolbarButton,
   usePlateEditorRef,
 } from '@udecode/plate';
+import styled from 'styled-components';
 
 export const BasicElementToolbarButtons = () => {
   const editor = usePlateEditorRef()!;
 
   return (
-    <>
+    <React.Fragment>
       <BlockToolbarButton
         type={getPluginType(editor, ELEMENT_H1)}
         icon={<LooksOne />}
@@ -110,7 +112,7 @@ export const BasicElementToolbarButtons = () => {
         type={getPluginType(editor, ELEMENT_CODE_BLOCK)}
         icon={<CodeBlock />}
       />
-    </>
+    </React.Fragment>
   );
 };
 
@@ -118,7 +120,7 @@ export const IndentToolbarButtons = () => {
   const editor = usePlateEditorRef()!;
 
   return (
-    <>
+    <React.Fragment>
       <ToolbarButton
         onMouseDown={editor && getPreventDefaultHandler(outdent, editor)}
         icon={<FormatIndentDecrease />}
@@ -127,7 +129,7 @@ export const IndentToolbarButtons = () => {
         onMouseDown={editor && getPreventDefaultHandler(indent, editor)}
         icon={<FormatIndentIncrease />}
       />
-    </>
+    </React.Fragment>
   );
 };
 
@@ -135,7 +137,7 @@ export const ListToolbarButtons = () => {
   const editor = usePlateEditorRef()!;
 
   return (
-    <>
+    <React.Fragment>
       <ListToolbarButton
         type={getPluginType(editor, ELEMENT_UL)}
         icon={<FormatListBulleted />}
@@ -144,18 +146,18 @@ export const ListToolbarButtons = () => {
         type={getPluginType(editor, ELEMENT_OL)}
         icon={<FormatListNumbered />}
       />
-    </>
+    </React.Fragment>
   );
 };
 
 export const AlignToolbarButtons = () => {
   return (
-    <>
+    <React.Fragment>
       <AlignToolbarButton value="left" icon={<FormatAlignLeft />} />
       <AlignToolbarButton value="center" icon={<FormatAlignCenter />} />
       <AlignToolbarButton value="right" icon={<FormatAlignRight />} />
       <AlignToolbarButton value="justify" icon={<FormatAlignJustify />} />
-    </>
+    </React.Fragment>
   );
 };
 
@@ -163,7 +165,7 @@ export const BasicMarkToolbarButtons = () => {
   const editor = usePlateEditorRef()!;
 
   return (
-    <>
+    <React.Fragment>
       <MarkToolbarButton
         type={getPluginType(editor, MARK_BOLD)}
         icon={<FormatBold />}
@@ -194,7 +196,7 @@ export const BasicMarkToolbarButtons = () => {
         clear={getPluginType(editor, MARK_SUPERSCRIPT)}
         icon={<Subscript />}
       />
-    </>
+    </React.Fragment>
   );
 };
 
@@ -221,14 +223,14 @@ export const HighlightToolbarButton = () => {
 };
 
 export const TableToolbarButtons = () => (
-  <>
+  <React.Fragment>
     <TableToolbarButton icon={<BorderAll />} transform={insertTable} />
     <TableToolbarButton icon={<BorderClear />} transform={deleteTable} />
     <TableToolbarButton icon={<BorderBottom />} transform={addRow} />
     <TableToolbarButton icon={<BorderTop />} transform={deleteRow} />
     <TableToolbarButton icon={<BorderLeft />} transform={addColumn} />
     <TableToolbarButton icon={<BorderRight />} transform={deleteColumn} />
-  </>
+  </React.Fragment>
 );
 
 export const MarkBallonToolbar = () => {
@@ -271,3 +273,9 @@ export const MarkBallonToolbar = () => {
     </BalloonToolbar>
   );
 };
+
+export const UnstyledHeadToolbar = styled(HeadingToolbar)`
+  margin: 0;
+  padding: 0;
+  border: none;
+`;
