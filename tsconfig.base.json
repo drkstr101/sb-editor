@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@stackbit/rich-text-editor": ["libs/rich-text-editor/src/index.ts"]
+      "@sb-editor/rich-text-editor": ["libs/rich-text-editor/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

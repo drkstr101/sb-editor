@@ -1,16 +1,17 @@
-import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom';
-import App from './app/app';
-import { theme } from './app/theme';
-import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider } from '@mui/material/styles';
+import { StrictMode } from 'react';
+import * as ReactDOM from 'react-dom/client';
 
-ReactDOM.render(
+import App from './app/app';
+
+import { BrowserRouter } from 'react-router-dom';
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+root.render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <BrowserRouter>
       <App />
-    </ThemeProvider>
-  </StrictMode>,
-  document.getElementById('root')
+    </BrowserRouter>
+  </StrictMode>
 );

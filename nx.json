@@ -4,22 +4,20 @@
   "affected": {
     "defaultBase": "main"
   },
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
   "implicitDependencies": {
     "package.json": {
       "dependencies": "*",
       "devDependencies": "*"
     },
-    ".eslintrc.json": "*"
+    ".eslintrc.json": "*",
+    ".stylelintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "ZTdiYjcwZWMtNjA2YS00YzdjLTlmNjgtZDE0NjNhODYwYWRifHJlYWQtd3JpdGU="
+        "cacheableOperations": ["build", "lint", "test", "e2e", "stylelint"],
+        "accessToken": "ZWQ4NTZmY2QtMjMwYi00NjQxLTg0ZTQtYjdlNTc1OTIzMzUwfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -34,15 +32,15 @@
   "generators": {
     "@nrwl/react": {
       "application": {
-        "style": "styled-components",
+        "style": "scss",
         "linter": "eslint",
         "babel": true
       },
       "component": {
-        "style": "styled-components"
+        "style": "scss"
       },
       "library": {
-        "style": "styled-components",
+        "style": "scss",
         "linter": "eslint"
       }
     }

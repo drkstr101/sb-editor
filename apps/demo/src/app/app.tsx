@@ -1,78 +1,59 @@
-import { ThemeProvider } from '@mui/material/styles';
-import { RichTextEditor } from '@stackbit/rich-text-editor';
-import { CssBaseline, Link, Typography } from '@mui/material';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import styles from './app.module.scss';
+import NxWelcome from './nx-welcome';
 
-import { theme } from './theme';
+import { Route, Routes, Link } from 'react-router-dom';
 
-function Copyright() {
+import { RichTextEditor } from '@sb-editor/rich-text-editor';
+
+export function App() {
   return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      sx={{ padding: 1 }}
-    >
-      {'Copyright © '}
-      <Link color="inherit" href="https://stackbit.com/">
-        Stackbit, Inc.
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
+    <>
+      <NxWelcome title="demo" />
+      <div />
+
+      {/* START: routes */}
+      {/* These routes and navigation have been generated for you */}
+      {/* Feel free to move and update them to fit your needs */}
+      <br />
+      <hr />
+      <br />
+      <div role="navigation">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/rich-text-editor">RichTextEditor</Link>
+          </li>
+          <li>
+            <Link to="/page-2">Page 2</Link>
+          </li>
+        </ul>
+      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              This is the generated root route.{' '}
+              <Link to="/page-2">Click here for page 2.</Link>
+            </div>
+          }
+        />
+        <Route path="/rich-text-editor" element={<RichTextEditor />} />
+        <Route
+          path="/page-2"
+          element={
+            <div>
+              <Link to="/">Click here to go back to root page.</Link>
+            </div>
+          }
+        />
+      </Routes>
+      {/* END: routes */}
+    </>
   );
 }
 
-// export type SbEditorState = PlatesStoreState<Value>;
-
-// const StackbitEditor: ForwardRefRenderFunction<
-//   StackbitEditorRef,
-//   StackbitEditorProps
-// > = ({ classes, ...props }, ref) => {
-//   // const [state, setState] = useState<PlatesStoreState>({});
-//   const [focus, setFocus] = useState(true);
-//
-//   return (
-//     <div className={classes.root}>
-//       <Container component="main" maxWidth="lg" className={classes.container}>
-//         <Paper variant="outlined" className={classes.editorContainer}>
-//           <Slide appear={false} direction="down" in={focus}>
-//             <AppBar
-//               position="absolute"
-//               color="default"
-//               elevation={0}
-//               sx={{
-//                 position: 'relative',
-//                 borderBottom: (t) => `1px solid ${t.palette.divider}`,
-//               }}
-//             >
-//               <Toolbar>
-//                 <Typography variant="h6" color="inherit" noWrap>
-//                   Stackbit Rich Text Editor Demo
-//                 </Typography>
-//               </Toolbar>
-//             </AppBar>
-//           </Slide>
-//           {/*<Toolbar />*/}
-//           <Box className={classes.editor}>
-//             <RichTextEditor id="main" />
-//           </Box>
-//         </Paper>
-//         <Copyright />
-//       </Container>
-//     </div>
-//   );
-// };
-
-export default function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <RichTextEditor />
-      <Copyright />
-    </ThemeProvider>
-  );
-}
-
-// export default withStyles(styles, { withTheme: true, name: 'StackbitEditor' })(
-//   forwardRef(RichTextEditor)
-// );
+export default App;
