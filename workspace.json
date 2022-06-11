@@ -4,6 +4,7 @@
   "projects": {
     "demo": "apps/demo",
     "demo-e2e": "apps/demo-e2e",
-    "rich-text-editor": "libs/rich-text-editor"
+    "rich-text-editor": "libs/rich-text-editor",
+    "types": "libs/types"
   }
 }

@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sb-editor/rich-text-editor": ["libs/rich-text-editor/src/index.ts"]
+      "@sb-editor/rich-text-editor": ["libs/rich-text-editor/src/index.ts"],
+      "@sb-editor/types": ["libs/types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
